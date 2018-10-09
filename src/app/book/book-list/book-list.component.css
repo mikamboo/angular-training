@@ -1,0 +1,30 @@
+.main-form{
+  margin: 0 auto;
+  min-width: 300px;
+  max-width: 400px;
+}
+
+.masonry { /* Masonry container */
+  column-count: 4;
+  column-gap: 1em;
+}
+
+.item { /* Masonry bricks or child elements */
+  background-color: #eee;
+  display: inline-block;
+  margin: 0 0 1em;
+  width: 100%;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+.example-full-width {
+  width: 100%;
+}
+
+input.ng.touched.ng-invalid{
+  color: red;
+}
