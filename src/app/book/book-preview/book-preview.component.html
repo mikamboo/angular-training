@@ -10,7 +10,8 @@
 
 <div class="book-item">
   <h4>{{book.title}}</h4>
-  <p>{{book.author.name}}</p>
-  <p>{{book.price}} €</p>
-  <img [src]="getPictureUrl(book)" alt="Author picture">
+  <p>{{book.author.name}} : {{book.price}} € </p>
+  <img [src]="getPictureUrl(book)" alt="Author picture" />
 </div>
+
+<ng-content select="[data-role='actions']"></ng-content>

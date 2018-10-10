@@ -15,5 +15,15 @@ export class BookStore {
   removeBook(book: Book) {
       this._books = this._books.filter(_book => _book !== book); // Principe d'Immutabilitéé
   }
+
+  replaceBook(previousBook: Book, currentBook: Book) {
+    this._books = this._books
+      .map(book => {
+        if (book === previousBook) {
+          return currentBook;
+        }
+        return book;
+      });
+  }
 }
 

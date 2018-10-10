@@ -1,10 +1,9 @@
 <div class="main-form">
   <form class="example-form"
         [formGroup]="bookForm"
-        (ngSubmit)="addBook()">
+        (ngSubmit)="submitBook($event)">
 
-    <!-- Book group. -->
-    <div formGroupName="book">
+    <div>
       <mat-form-field class="example-full-width">
         <input matInput placeholder="Titre" formControlName="title" type="text" />
       </mat-form-field>
@@ -21,9 +20,28 @@
       </mat-form-field>
     </div>
 
-    <button class="example-full-width" type="submit" mat-raised-button color="primary" [disabled]="!bookForm.valid">ADD BOOK</button>
+    <button class="example-full-width"
+            type="submit"
+            mat-raised-button
+            color="primary"
+            [disabled]="!bookForm.valid">{{ buttonLabel || 'SUBMIT' }}
+    </button>
+    <ng-container *ngIf="previewBook">
+      <mat-slide-toggle
+        color="warn"
+        (toggleChange)="shouldShowPreview = !shouldShowPreview"
+        [checked]="shouldShowPreview">
+        TOGGLE PREVIEW
+      </mat-slide-toggle>
+
+      <mpo-book-preview
+        *ngIf="shouldShowPreview"
+        [book]="previewBook">
+      </mpo-book-preview>
+    </ng-container>
+
     <!-- {{bookForm.get('price') .errors | json}} -->
-    <div *ngIf="bookForm.get('book.title') as titleControl">
+    <div *ngIf="bookForm.get('title') as titleControl">
       <!-- {{titleControl.errors | json}} -->
       <div *ngIf="titleControl.touched && titleControl.hasError('required')">
         Title is required

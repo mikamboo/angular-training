@@ -1,11 +1,20 @@
-<mpo-book-form (bookSubmit)="bookSubmitted($event)"></mpo-book-form>
+<mpo-book-form
+  *ngIf="selectedBook == null"
+  buttonLabel="ADD"
+  (bookSubmit)="addBook($event)">
+</mpo-book-form>
 
 <div class="masonry">
   <div class="item" *ngFor="let book of getBookList()">
-    <mpo-book-preview [book]="book"></mpo-book-preview>
-    <button class="delete-button" color="warn" mat-icon-button (click)="removeBook(book)">
-      <mat-icon aria-label="Example icon-button with a heart icon">remove_circle</mat-icon>
-    </button>
+    <div *ngIf="selectedBook !== book">
+      <mpo-book-preview [book]="book">
+        <button class="delete-button" color="warn" mat-icon-button (click)="removeBook(book)">
+          <mat-icon aria-label="Remove book button">remove_circle</mat-icon>
+        </button>
+        <button class="delete-button" color="warn" mat-icon-button (click)="selectBook(book)">
+          <mat-icon aria-label="Edit book button">create</mat-icon>
+        </button>
+      </mpo-book-preview>
+    </div>
   </div>
-
 </div>

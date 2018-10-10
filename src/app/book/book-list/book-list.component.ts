@@ -10,20 +10,31 @@ import {Book} from '../book';
 export class BookListComponent  implements  OnInit {
   private _bookStore = new BookStore();
 
+  selectedBook: Book;
+
   constructor() {}
 
   ngOnInit(): void {
+  }
+
+  addBook(book: Book) {
+    this._bookStore.addBook(book);
   }
 
   getBookList() {
     return this._bookStore.getBookList();
   }
 
-  bookSubmitted(book: Book) {
-    this._bookStore.addBook(book);
-  }
-
   removeBook(book: Book) {
     this._bookStore.removeBook(book);
+  }
+
+  submitBook(book: Book) {
+    this._bookStore.replaceBook(this.selectedBook, book);
+    this.selectedBook = null;
+  }
+
+  selectBook(book: Book) {
+    this.selectedBook = book;
   }
 }
