@@ -1,0 +1,16 @@
+<!--
+<mat-card class="item example-card" *ngFor="let book of getBookList()">
+  <mat-card-header>
+    <mat-card-title>{{book.title}}</mat-card-title>
+    <mat-card-subtitle>{{book.author.name}}</mat-card-subtitle>
+  </mat-card-header>
+  <img [src]="getPictureUrl(book)" mat-card-image alt="Photo of a Shiba Inu">
+</mat-card>
+-->
+
+<div class="book-item">
+  <h4>{{book.title}}</h4>
+  <p>{{book.author.name}}</p>
+  <p>{{book.price}} €</p>
+  <img [src]="getPictureUrl(book)" alt="Author picture">
+</div>

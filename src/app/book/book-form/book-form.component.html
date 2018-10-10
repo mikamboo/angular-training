@@ -1,0 +1,33 @@
+<div class="main-form">
+  <form class="example-form"
+        [formGroup]="bookForm"
+        (ngSubmit)="addBook()">
+
+    <!-- Book group. -->
+    <div formGroupName="book">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Titre" formControlName="title" type="text" />
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Prix" formControlName="price" type="number" />
+      </mat-form-field>
+    </div>
+
+    <!-- Author group. -->
+    <div formGroupName="author">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Auteur" formControlName="name" type="text" />
+      </mat-form-field>
+    </div>
+
+    <button class="example-full-width" type="submit" mat-raised-button color="primary" [disabled]="!bookForm.valid">ADD BOOK</button>
+    <!-- {{bookForm.get('price') .errors | json}} -->
+    <div *ngIf="bookForm.get('book.title') as titleControl">
+      <!-- {{titleControl.errors | json}} -->
+      <div *ngIf="titleControl.touched && titleControl.hasError('required')">
+        Title is required
+      </div>
+    </div>
+  </form>
+</div>

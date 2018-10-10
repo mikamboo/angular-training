@@ -1,0 +1,21 @@
+.book-item{
+  text-align: center;
+  padding: 10px;
+}
+
+.example-card {
+  max-width: 350px;
+}
+
+@mixin mpo-border-rad($radius){
+  width: $radius;
+  border-radius: 50%;
+}
+
+.book-item {
+  & img {
+      border: solid 2px #666;
+      background-color: rgba(0, 255, 0, 0.2);
+      @include mpo-border-rad(130px);
+  }
+}

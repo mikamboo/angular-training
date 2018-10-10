@@ -7,7 +7,7 @@
 .item { /* Masonry bricks or child elements */
   background-color: #eee;
   display: inline-block;
-  margin: 0 0 1em;
+  margin: 0.5em;
   width: 100%;
   position: relative;
 }
