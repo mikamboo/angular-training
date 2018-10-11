@@ -1,5 +1,9 @@
 import {Book} from './book';
+import {Injectable} from '@angular/core';
 
+@Injectable({
+  providedIn: 'root'
+})
 export class BookStore {
 
   private _books: Array<Book> = [];

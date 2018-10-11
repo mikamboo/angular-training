@@ -5,7 +5,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatToolbarModule } from '@angular/material';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { BookModule } from './book/book.module';
-import {WidgetModule} from './widget/widget.module';
+import { WidgetModule } from './widget/widget.module';
 
 @NgModule({
   declarations: [

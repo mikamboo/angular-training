@@ -8,13 +8,25 @@ import {Book} from '../book';
   styleUrls: ['./book-list.component.css']
 })
 export class BookListComponent  implements  OnInit {
-  private _bookStore = new BookStore();
 
   selectedBook: Book;
 
-  constructor() {}
+  constructor(
+    private _bookStore: BookStore
+  ) {}
 
   ngOnInit(): void {
+    this.fetchBooksAsPromise();
+  }
+
+  private fetchBooksAsPromise(q = 'extreme%20programming'){
+    return fetch(`https://www.googleapis.com/books/v1/volumes?q=${q}`)
+      .then(response => response.json())
+      .then(data => data.items)
+      .then(items => console.log(items))
+      .catch(error => {
+        console.log(`D'OH!`, error);
+      });
   }
 
   addBook(book: Book) {
@@ -27,11 +39,6 @@ export class BookListComponent  implements  OnInit {
 
   removeBook(book: Book) {
     this._bookStore.removeBook(book);
-  }
-
-  submitBook(book: Book) {
-    this._bookStore.replaceBook(this.selectedBook, book);
-    this.selectedBook = null;
   }
 
   selectBook(book: Book) {
