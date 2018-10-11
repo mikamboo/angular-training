@@ -16,6 +16,7 @@ import {
   MatSlideToggleModule,
   MatToolbarModule
 } from '@angular/material';
+import {BookSearchComponent} from './book-search/book-search.component';
 
 const NgMaterial = [
   MatButtonModule, MatFormFieldModule, MatInputModule, MatToolbarModule,
@@ -25,7 +26,8 @@ const NgMaterial = [
   declarations: [
     BookListComponent,
     BookFormComponent,
-    BookPreviewComponent
+    BookPreviewComponent,
+    BookSearchComponent
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ const NgMaterial = [
   exports: [
     BookListComponent,
     BookFormComponent,
-    BookPreviewComponent
+    BookPreviewComponent,
+    BookSearchComponent
   ],
   providers: [],
 })

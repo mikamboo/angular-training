@@ -1,0 +1,13 @@
+<form class="search-form" [formGroup]="searchBookForm">
+  <div>
+    <mat-form-field >
+      <input matInput placeholder="Mots clés" formControlName="title" type="text" />
+    </mat-form-field>
+  </div>
+</form>
+<div class="masonry" *ngIf="bookSearchResults">
+  <mpo-book-preview class="item"
+    *ngFor="let book of bookSearchResults"
+    [book]="book" >
+  </mpo-book-preview>
+</div>

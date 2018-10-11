@@ -6,6 +6,7 @@ import { MatToolbarModule } from '@angular/material';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { BookModule } from './book/book.module';
 import { WidgetModule } from './widget/widget.module';
+import { HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { WidgetModule } from './widget/widget.module';
     BrowserAnimationsModule,
     StorageServiceModule,
     MatToolbarModule,
+    HttpClientModule,
     WidgetModule,
     BookModule
   ],
