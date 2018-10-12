@@ -1,14 +1,13 @@
 <mat-toolbar color="primary">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
+
+  <a mat-button routerLink=".">
+    <h1>
+      {{ title | uppercase }}
+    </h1>
+  </a>
+  <a mat-button routerLink="/book/search">Find Book</a>
+  <p>{{time$ | async | date:'d/m/y hh:mm:ss'}}</p>
 </mat-toolbar>
 <!--<mpo-book-list></mpo-book-list>-->
 <!--<mpo-book-search></mpo-book-search>-->
 <router-outlet></router-outlet>
-
-<footer>
-  <div><a routerLink="/demo">Demo</a></div>
-  <div><a routerLink="/book-search">Find Books</a></div>
-</footer>
-

@@ -1,9 +1,7 @@
 
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BookListComponent } from './book-list/book-list.component';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StorageServiceModule } from 'angular-webstorage-service';
 import { BookFormComponent } from './book-form/book-form.component';
 import { BookPreviewComponent } from './book-preview/book-preview.component';
@@ -17,6 +15,8 @@ import {
   MatToolbarModule
 } from '@angular/material';
 import {BookSearchComponent} from './book-search/book-search.component';
+import { BookDetailComponent } from './book-detail/book-detail.component';
+import {CommonModule} from '@angular/common';
 
 const NgMaterial = [
   MatButtonModule, MatFormFieldModule, MatInputModule, MatToolbarModule,
@@ -27,12 +27,12 @@ const NgMaterial = [
     BookListComponent,
     BookFormComponent,
     BookPreviewComponent,
-    BookSearchComponent
+    BookSearchComponent,
+    BookDetailComponent
   ],
   imports: [
-    BrowserModule,
+    CommonModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule,
     StorageServiceModule,
     ...NgMaterial,
   ],

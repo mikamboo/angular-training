@@ -8,12 +8,18 @@
   <div class="item" *ngFor="let book of getBookList()">
     <div *ngIf="selectedBook !== book">
       <mpo-book-preview [book]="book">
-        <button class="delete-button" color="warn" mat-icon-button (click)="removeBook(book)">
-          <mat-icon aria-label="Remove book button">remove_circle</mat-icon>
-        </button>
-        <button class="delete-button" color="warn" mat-icon-button (click)="selectBook(book)">
-          <mat-icon aria-label="Edit book button">create</mat-icon>
-        </button>
+        <div data-role="actions">
+          <!--
+            <data-role="actions"> Permet de gérer l'affichage des boutton
+            à l'intérieur du compasant <mpo-book-preview>
+          -->
+          <button class="delete-button" color="warn" mat-icon-button (click)="removeBook(book)">
+            <mat-icon aria-label="Remove book button">remove_circle</mat-icon>
+          </button>
+          <button class="delete-button" color="warn" mat-icon-button (click)="selectBook(book)">
+            <mat-icon aria-label="Edit book button">create</mat-icon>
+          </button>
+        </div>
       </mpo-book-preview>
     </div>
   </div>
