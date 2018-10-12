@@ -1,10 +1,14 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div>
-  <mat-toolbar color="primary">
-    <h1>
-      Welcome to {{ title }}!
-    </h1>
-  </mat-toolbar>
-  <!--<mpo-book-list></mpo-book-list>-->
-  <mpo-book-search></mpo-book-search>
-</div>
+<mat-toolbar color="primary">
+  <h1>
+    Welcome to {{ title }}!
+  </h1>
+</mat-toolbar>
+<!--<mpo-book-list></mpo-book-list>-->
+<!--<mpo-book-search></mpo-book-search>-->
+<router-outlet></router-outlet>
+
+<footer>
+  <div><a routerLink="/demo">Demo</a></div>
+  <div><a routerLink="/book-search">Find Books</a></div>
+</footer>
+

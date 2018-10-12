@@ -7,6 +7,7 @@ import { StorageServiceModule } from 'angular-webstorage-service';
 import { BookModule } from './book/book.module';
 import { WidgetModule } from './widget/widget.module';
 import { HttpClientModule} from '@angular/common/http';
+import {AppRoutingModule} from './app-routing.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HttpClientModule} from '@angular/common/http';
     BrowserModule,
     BrowserAnimationsModule,
     StorageServiceModule,
+    AppRoutingModule,
     MatToolbarModule,
     HttpClientModule,
     WidgetModule,
